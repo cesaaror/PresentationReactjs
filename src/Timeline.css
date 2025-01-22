@@ -1,0 +1,65 @@
+.timeline {
+    background-color: #1e2a78; /* Fondo oscuro como en otros componentes */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra similar */
+    max-width: 800px; /* Ancho máximo */
+    margin: 20px auto; /* Centrado automático */
+    color: #c3d1e4; /* Color del texto */
+  }
+  
+  .timeline-title {
+    font-size: 2rem; /* Tamaño grande para el título */
+    font-weight: 600; /* Fuente seminegrita */
+    text-align: center; /* Centrado del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: #e5f0ff; /* Color claro */
+  }
+  
+  .timeline-list {
+    list-style: none; /* Sin puntos de lista */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin márgenes */
+  }
+  
+  .timeline-item {
+    display: flex; /* Distribución horizontal */
+    align-items: flex-start; /* Alineación superior */
+    margin-bottom: 20px; /* Espaciado entre elementos */
+    border-left: 4px solid #007bff; /* Línea indicadora */
+    padding-left: 15px; /* Separación del contenido */
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0; /* Sin margen inferior en el último elemento */
+  }
+  
+  .timeline-year {
+    font-size: 1.5rem; /* Tamaño mediano */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Azul principal */
+    margin-right: 10px; /* Espacio lateral */
+  }
+  
+  .timeline-content {
+    background-color: #0a1f44; /* Fondo similar a otros contenedores */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    flex-grow: 1; /* Ocupar espacio restante */
+  }
+  
+  .timeline-item-title {
+    font-size: 1.25rem; /* Tamaño mayor para el título */
+    font-weight: 600; /* Seminegrita */
+    color: #e5f0ff; /* Color claro */
+    margin: 0 0 10px; /* Sin margen superior, margen inferior */
+  }
+  
+  .timeline-item-description {
+    font-size: 1rem; /* Tamaño normal */
+    line-height: 1.5; /* Altura de línea */
+    color: #c3d1e4; /* Texto claro */
+    margin: 0; /* Sin márgenes */
+  }
+  

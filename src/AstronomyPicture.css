@@ -1,0 +1,257 @@
+/* General Styles for Astronomy Widget */
+.Start{
+    background-color: #0d2755; /* Fondo negro, como el universo */
+    color: #ffffff; /* Color blanco para los textos */
+    min-height: 100vh; /* Asegura que la altura mínima sea toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+    padding: 20px; /* Espaciado */
+  }
+  
+  .Start h1 {
+    font-size: 3rem;
+    color: #ffb703; /* Título en dorado, contraste con el fondo negro */
+    margin-bottom: 30px; /* Espaciado hacia abajo */
+    text-transform: uppercase; /* Título en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras para un toque futurista */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra en el texto para resaltar */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Efecto de resplandor en el texto */
+  }
+  
+  /* Efecto de resplandor en el título */
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #ffb703, 0 0 10px #ffb703, 0 0 15px #ffb703;
+    }
+    100% {
+      text-shadow: 0 0 10px #ffb703, 0 0 20px #ffb703, 0 0 30px #ffb703;
+    }
+  }
+  /* Caja principal de contenido de NASA */
+  .nasa-content-box {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Sombra más fuerte */
+    margin: 20px auto;
+    max-width: 1100px; /* Ancho máximo */
+    width: 90%; /* Asegura que la caja sea flexible en tamaños pequeños */
+    transition: transform 0.3s ease-in-out; /* Efecto suave al pasar el ratón */
+  }
+  
+  
+  /* Botón de acción */
+  .nasa-content-box button {
+    background-color: #1e2a78; /* Color azul */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Efecto hover en el botón */
+  
+
+
+
+.astronomy-widget {
+    background-color: #1e2a78; /* Fondo azul profundo */
+    color: rgb(5, 4, 4); /* Texto blanco */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+    max-width: 700px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  
+  .image-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .apod-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra mejorada */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .apod-image:hover {
+    transform: scale(1.05); /* Zoom al pasar el mouse sobre la imagen */
+  }
+  
+  .info-section {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .apod-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #ffb703;
+    transition: color 0.3s ease;
+  }
+  
+  .apod-title:hover {
+    color: #ffd700; /* Efecto hover en el título */
+  }
+  
+  .apod-date, .apod-copyright {
+    font-size: 1em;
+    color: #e0e0e0;
+    margin-bottom: 5px;
+  }
+  
+  .apod-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 15px;
+    font-style: italic;
+    color: #111111;
+  }
+  /* ___________________________________ */
+
+  .astronomy-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #000; /* Fondo negro */
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .carousel-button2 {
+    background-color: #1e2a78;
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .carousel-button2:hover {
+    background-color: #4caf50;
+    transform: scale(1.1); /* Efecto hover */
+  }
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .apod-image {
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra suave */
+  }
+  
+  .image-info h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #ffb703; /* Color dorado para el título */
+    margin-top: 20px;
+  }
+  
+  .image-description {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: #dcdcdc;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo de la caja */
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify; /* Justificar el texto para que se vea más ordenado */
+  }
+  
+  .image-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .image-actions button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .image-actions button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .astronomy-widget {
+      padding: 15px;
+      flex-direction: column;
+      max-width: 90%;
+    }
+  
+    .image-section {
+      margin-bottom: 15px;
+    }
+  
+    .apod-image {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  
+    .carousel-button {
+      font-size: 1.5em;
+      padding: 10px;
+    }
+  
+    .image-actions button {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+  }

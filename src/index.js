@@ -1,17 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import { createRoot } from 'react-dom/client'; // Importa createRoot en lugar de ReactDOM.render
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ChatPage from './ChatPage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement); // Crea una instancia de createRoot
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+if (window.location.pathname === '/chatWindow') {
+  // Renderiza solo ChatPage para la ruta /chatWindow
+  root.render(
+    <BrowserRouter>
+      <ChatPage />
+    </BrowserRouter>
+  );
+} else {
+  // Renderiza la aplicación completa para otras rutas
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}

@@ -1,38 +1,763 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Estilos generales */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../src/assets/fondo.webp'); /* Ruta de la imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+  color: #c3d1e4;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px;
+  background-color: #0d2755;
+  background: linear-gradient(90deg, #0a1f44, #1e2a78, #0a1f44);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+}
+/*--------------------------------------------------- */
+
+/* App.css */
+
+/* Estilo general para el contenedor de autenticación */
+.auth-container {
+  background: white; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px; /* Espaciado interno */
+  max-width: 400px; /* Ancho máximo */
+  margin: 20px auto; /* Centramos la caja */
+}
+
+/* Títulos dentro de la caja de autenticación */
+.auth-container h2 {
+  text-align: center; /* Centramos el texto */
+  color: #333; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo para los campos de entrada */
+.auth-container input {
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espaciado interno */
+  margin: 10px 0; /* Margen vertical */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: border-color 0.3s; /* Transición suave al enfocar */
+}
+
+/* Cambiar color del borde al enfocar */
+.auth-container input:focus {
+  border-color: #007bff; /* Color de borde al enfocar */
+  outline: none; /* Sin contorno */
+}
+
+/* Botones dentro de la caja */
+.auth-container button {
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espaciado interno */
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 10px 0; /* Margen vertical */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Cambiar color de fondo al pasar el ratón */
+.auth-container button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo para el texto de error */
+.auth-container p {
+  color: red; /* Color rojo para errores */
+}
+
+/* Texto alternativo para cambiar entre registro e inicio de sesión */
+.auth-container p {
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  color: #007bff; /* Color azul para el texto alternativo */
+}
+
+/* Cambiar color del texto alternativo al pasar el ratón */
+.auth-container p:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+
+
+
+
+
+/*--------------------------------------------------- */
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  background-color: #1e2a78; /* Color de fondo */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.profile-image {
+  width: 150px; /* Tamaño de la imagen */
+  height: auto;
+  border-radius: 50%; /* Hacer la imagen circular */
+  border: 5px solid #007bff; /* Borde azul */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+}
+.profile-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.text-content {
+  max-width: 500px; /* Ancho máximo del contenido de texto */
+  color: #ffffff; /* Color de texto */
+}
+
+.text-content h1 {
+  font-size: 2em; /* Tamaño de la fuente del nombre */
+  color: #e5f0ff; /* Color del nombre */
+}
+
+.description {
+  font-size: 1em; /* Tamaño más pequeño para la descripción */
+  line-height: 1.4; /* Altura de línea para mejor legibilidad */
+  margin: 20px 0; /* Espaciado entre párrafos */
+}
+
+.btn-contact {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: background-color 0.3s; /* Transición para el cambio de color */
+}
+
+.btn-contact:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 0px 10px #007bff;
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+
+
+
+/*------------------------------------- Sección de estadísticas */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0a1f44;
+  padding: 30px;
+  border-radius: 10px;
+  color: #c3d1e4;
+  margin-left: 2px;
+}
+
+.stat {
+  display: block;
+  width: 30%;
+  text-align: center;
+  background-color: #1e2a78;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat h3 {
+  font-size: 1.5em;
+  color: #e5f0ff;
+  margin-bottom: 15px;
+}
+
+/* Estilos para la lista de habilidades */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-list span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.skills-list span svg {
+  color: #007bff;
+  font-size: 1.5em;
+}
+
+/*------------------------------------- Sección de comentarios y reseñas */
+.comments-section {
+  margin-top: 20px;
+}
+
+.comments-list {
+  margin-top: 10px;
+}
+
+.comment {
+  background-color: #f0f4f8;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Estilos para el sistema de valoración */
+.rating span {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-right: 5px;
+}
+
+.rating span:hover,
+.rating span:hover ~ span {
+  color: #ffc107;
+}
+
+/* Botón de envío */
+button {
+  background-color: #4caf50;
   color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+/*------------------------------------- Galería de proyectos */
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  
+
+}
+
+.project-card {
+  background-color: #0a1f44;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center; 
+ 
+}
+
+.project-image, .project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card p {
+  color: #c3d1e4;
+  margin-top: 10px;
+  font-size: 1em;
+  
+}
+
+/*------------------------------------- Reseñas */
+.reviews-list {
+  text-align: left;
+  font-size: 1em;
+  color: #e5f0ff;
+}
+
+.reviews-list p {
+  background-color: #0a1f44;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+
+
+/*------------------------------------- Tegnologias */
+.technology-description {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.technology-description p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.technology-description pre {
+  background-color: #2b2b2b;
+  color: #e5e5e5;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+
+/*-------------------------------------  */
+
+
+
+.auth-component {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1e2a78;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.auth-component input,
+.auth-component button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.auth-component button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-component button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* -------style witget-----------------------------------------------------------------------  */
+
+.weather-widget {
+  background-color: #1e2a78; /* Color de fondo del widget */
+  color: #ffffff; /* Color de texto */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra del widget */
+  display: flex; /* Para distribución horizontal */
+  justify-content: space-between; /* Espacio entre los elementos */
+  max-width: 600px; /* Ancho máximo del widget */
+  margin: 20px auto; /* Centrar el widget */
+}
+.widgets-container {
+  display: flex;
+  gap: 20px; /* Espacio entre widgets */
+  justify-content: center; /* Centrado horizontal */
+  align-items: flex-start; /* Alinear widgets arriba */
+  flex-wrap: wrap; /* Permitir que los widgets se ajusten en pantallas pequeñas */
+}
+
+.widgets-container > div {
+  flex: 1;
+  min-width: 300px; /* Ancho mínimo de cada widget */
+}
+.weather-info {
+  display: flex; /* Distribuir los elementos horizontalmente */
+  flex-direction: row; /* Aseguramos que la dirección de los elementos sea horizontal */
+  align-items: flex-start; /* Alinear los elementos en la parte superior */
+  width: 100%; /* Aseguramos que ocupe el ancho completo */
+}
+
+.additional-info {
+  display: flex; /* Usamos flexbox para la información adicional */
+  flex-direction: column; /* Mantiene la dirección de los elementos de arriba a abajo */
+  margin-right: 20px; /* Espacio entre la información adicional y la temperatura */
+  padding-right: 20px; /* Espacio derecho adicional para evitar que se pegue a la línea divisoria */
+}
+
+.location-temp {
+  display: flex; /* Mantiene la localidad y la temperatura juntos */
+  flex-direction: column; /* Alinear verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+}
+
+.temperature {
+  font-size: 2em; /* Tamaño reducido para la temperatura */
+  font-weight: bold; /* Negrita para destacar la temperatura */
+}
+
+.description {
+  font-size: 0.9em; /* Tamaño reducido para la descripción */
+  margin-top: 5px; /* Espacio entre temperatura y descripción */
+}
+
+/* Estilo de la línea divisoria */
+.divider {
+  width: 2px; /* Ancho de la línea */
+  background-color: #ffffff; /* Color de la línea */
+  height: 100%; /* Altura completa del contenedor */
+  margin: 0 20px; /* Espacio a los lados de la línea */
+}
+
+/* Efecto hover para el widget */
+.weather-widget:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+  transition: transform 0.3s; /* Transición suave */
+}
+
+/* Estilos para el popup "Más sobre mí" */
+.about-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+.popup-content h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-button:hover {
+  color: #ff4d4f;
+}
+
+
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+
+  .main-content {
+    padding: 20px 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .intro-section,
+  .stat {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .project-gallery {
+    flex-direction: column;
+  }
+  
+
+  .auth-component {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e2a78;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .auth-component input,
+  .auth-component button {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
+
+/* Modo Fiesta: Fondo animado y texto blanco */
+.party-mode {
+  animation: partyBackground 3s infinite; /* Fondo animado */
+  color: #fff; /* Texto blanco */
+}
+.party-mode body{
+  animation: partyBackground 3s infinite;
+}
+
+/* Definimos los colores para el fondo animado */
+@keyframes partyBackground {
+  0% { background-color: #ff4d4f; }
+  25% { background-color: #ffbf00; }
+  50% { background-color: #52c41a; }
+  75% { background-color: #1890ff; }
+  100% { background-color: #722ed1; }
+}
+
+/* Animación de "bombeo" para los elementos */
+.party-mode .timeline, 
+.party-mode .auth-container, 
+.party-mode .stats-section, 
+.party-mode .project-gallery {
+  animation: popEffect 1.5s infinite; /* Efecto de escala */
+}
+
+@keyframes popEffect {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+
+.party-mode .timeline-title,
+.party-mode .timeline-item-title {
+  color: #ffffff; /* Blanco brillante para los títulos */
+}
+
+.party-mode .timeline-item {
+  border-left: 4px solid #ff1493; /* Borde rosa brillante */
+}
+
+.party-mode .timeline-content {
+  background-color: #ff4da6; /* Fondo más claro para el contenido */
+}
+
+.party-mode .timeline-item-description {
+  color: #ffe6f1; /* Texto suave para las descripciones */
+}
+
+/* Estilos para otros componentes, como los formularios */
+.party-mode .auth-container {
+  background-color: #ff80c0; /* Fondo rosa pastel */
+  border-radius: 10px;
+}
+
+
+
+
+/* Estilo para el GIF en modo fiesta */
+.party-gif {
+  width: 150px;
+  height: auto;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.7); /* Sombra para el GIF */
+}
+
+
+
+
+
+/* Estilo para el formulario de contacto */
+.contact-form-container {
+  background-color: #1e2a78; /* Fondo azul oscuro */
+  border-radius: 10px;
+  padding: 25px; /* Mayor espacio interno */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
+  color: #fff; /* Texto blanco */
+  box-sizing: border-box; /* Para asegurar que padding no se salga del contenedor */
+}
+
+.contact-form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2em; /* Tamaño de fuente más grande */
+  color: #e5f0ff; /* Color claro */
+}
+
+.form-group {
+  margin-bottom: 25px; /* Mayor espacio entre los campos */
+}
+
+label {
+  font-weight: 600;
+  color: #f4f4f4;
+  margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+  display: block; /* Asegura que las etiquetas estén por encima de los inputs */
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px; /* Mayor padding para una mejor experiencia táctil */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes más redondeados */
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  margin-top: 8px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff; /* Borde azul al enfocar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Sombra suave para indicar el enfoque */
+}
+
+textarea {
+  min-height: 150px; /* Altura mínima para el textarea */
+}
+
+button.submit-button {
+  width: 100%;
+  padding: 14px; /* Mayor padding en el botón */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+button.submit-button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+.contact-form-container p {
+  color: #ff1493; /* Color de texto del mensaje de estado */
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.1em; /* Un tamaño de fuente un poco mayor para destacar el mensaje */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.8em; /* Ajuste de tamaño en pantallas pequeñas */
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Menos espacio en pantallas pequeñas */
+  }
+
+  input, textarea {
+    padding: 12px; /* Reducir el padding para pantallas pequeñas */
+    font-size: 14px; /* Ajustar tamaño de fuente */
+  }
+
+  button.submit-button {
+    padding: 12px;
+    font-size: 14px; /* Ajustar tamaño del texto del botón */
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1976d2;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+}
+
+
+

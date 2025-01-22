@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Estilos generales para el tema oscuro */
+
+body.dark-theme  {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../src/assets/fondo-dark.webp'); /* Asegúrate de tener una imagen de fondo más oscura */
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e5e5e5; /* Texto claro para el tema oscuro */
+}
+.dark-theme .weather-widget {
+  background-color: #121212; /* Color de fondo del widget */
+  
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dark-theme .navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px;
+  background-color: #121212; /* Fondo oscuro para la barra de navegación */
+  background: linear-gradient(90deg, #2b2b2b, #4b4b4b, #2b2b2b);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+}
+
+/*--------------------------------------------------- */
+
+/* Tema oscuro para la caja de autenticación */
+.auth-container {
+  background: #1f1f1f; /* Fondo oscuro para el formulario */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.auth-container h2 {
+  text-align: center;
+  color: #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #444444; /* Bordes más oscuros */
+  border-radius: 5px;
+  background-color: #333333; /* Fondo de campo oscuro */
+  color: #e5e5e5;
+  transition: border-color 0.3s;
+}
+
+.auth-container input:focus {
+  border-color: #00aaff; /* Color más brillante al enfocar */
+  outline: none;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #0088cc;
+}
+
+.auth-container p {
+  color: #ff4040; /* Color de texto de error */
+}
+
+.auth-container p:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------- */
+.dark-theme .intro-section {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-image {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #00aaff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.text-content {
+  max-width: 500px;
+  color: #e5e5e5; /* Texto más claro */
+}
+
+.text-content h1 {
+  font-size: 2em;
+  color: #00aaff;
+}
+
+.description {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.btn-contact {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-contact:hover {
+  background-color: #0088cc;
+  box-shadow: 0px 0px 10px #00aaff;
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+/*------------------------------------- Sección de estadísticas */
+.dark-theme .stats-section {
+  display: flex;
+  justify-content: space-around;
+  background-color: #121212;
+  padding: 30px;
+  border-radius: 10px;
+  color: #e5e5e5;
+}
+
+.dark-theme .stat {
+  display: block;
+  width: 30%;
+  text-align: center;
+  background-color: #2b2b2b;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat h3 {
+  font-size: 1.5em;
+  color: #00aaff;
+}
+
+/* Estilos para la lista de habilidades */
+.skills-list span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.skills-list span svg {
+  color: #00aaff;
+  font-size: 1.5em;
+}
+
+/*------------------------------------- Sección de comentarios y reseñas */
+.dark-theme .comments-section {
+  margin-top: 20px;
+}
+
+.comments-list {
+  margin-top: 10px;
+}
+
+.comment {
+  background-color: #333333;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.comment p {
+  margin: 5px 0;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  resize: none;
+  background-color: #222222;
+  color: #e5e5e5;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #00aaff;
+}
+
+/* Estilos para el sistema de valoración */
+.rating span {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-right: 5px;
+}
+
+.rating span:hover,
+.rating span:hover ~ span {
+  color: #ffc107;
+}
+
+/* Botón de envío */
+button {
+  background-color: #00aaff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+button:disabled {
+  background-color: #444444;
+  cursor: not-allowed;
+}
+
+.dark-theme .popup-content {
+  background: #242323;
+  box-shadow: 0px 5px 15px rgba(190, 190, 190, 0.938);
+
+}
+.dark-theme .popup-content h2 {
+  color: #817f7f;  
+}
+.dark-theme .popup-content p {
+  color: #817f7f;
+  
+}
+/*------------------------------------- Galería de proyectos */
+
+.dark-theme .technology-description {
+  background-color:#121212;
+}
+.dark-theme .technology-description p {
+  color:#c9c9c9;
+}
+
+.dark-theme .project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.dark-theme .project-card {
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.project-card p {
+  color: #e5e5e5;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*------------------------------------- Reseñas */
+.reviews-list {
+  text-align: left;
+  font-size: 1em;
+  color: #e5e5e5;
+}
+
+.reviews-list p {
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.technology-descriptions {
+  margin-top: 20px;
+  color: #e5e5e5;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.auth-component {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+
+  /* Contenedor principal */
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  /* Sección de introducción */
+  .dark-theme .intro-section {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px; /* Reducimos el padding en móviles */
+  }
+
+  /* Imagen de perfil dentro de intro-section */
+  .profile-image {
+    width: 120px; /* Ajustamos el tamaño de la imagen en móviles */
+  }
+
+  /* Texto dentro de la sección de introducción */
+  .text-content h1 {
+    font-size: 1.8em; /* Reducimos el tamaño del título en móviles */
+  }
+
+  /* Sección de estadísticas */
+  .dark-theme .stats-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  /* Caja de estadísticas individual */
+  .dark-theme .stat {
+    width: 90%; /* Reducción de ancho para mejor adaptación en pantallas pequeñas */
+    padding: 15px;
+  }
+
+  /* Galería de proyectos */
+  .dark-theme .project-gallery {
+    flex-direction: column;
+    gap: 20px; /* Espaciado más consistente en móviles */
+  }
+
+  .dark-theme .project-card {
+    padding: 10px;
+  }
+
+  /* Componente de autenticación */
+  .auth-component {
+    width: 100%;
+    padding: 15px;
+    background-color: #1f1f1f; /* Fondo oscuro para mantener coherencia */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Inputs y botón de autenticación */
+  .auth-component input,
+  .auth-component button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9em; /* Ajuste del tamaño de fuente */
+    padding: 10px; /* Reducción del padding en móviles */
+  }
+
+  /* Botones en general */
+  .btn-contact {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9em; /* Ajuste del tamaño de fuente */
+  }
+
+  /* Listado de habilidades */
+  .skills-list span {
+    font-size: 1em;
+    gap: 6px;
+  }
+
+  /* Sección de comentarios */
+  .comments-list .comment {
+    padding: 10px;
+  }
+
+  /* Reseñas */
+  .reviews-list p {
+    font-size: 0.9em;
+  }
+  
+}
+
+.dark-theme .timeline {
+  background-color: #121212; /* Fondo más oscuro */
+  color: #c3d1e4; /* Texto claro */
+}
+
+.dark-theme .timeline-title {
+  color: #e5f0ff; /* Título en un color más claro */
+}
+
+.dark-theme .timeline-item {
+  border-left: 4px solid #007bff; /* Mantener el azul para la línea */
+}
+
+.dark-theme .timeline-year {
+  color: #007bff; /* Azul principal */
+}
+
+.dark-theme .timeline-content {
+  background-color: #2b2b2b;
+  color: #c3d1e4; /* Texto claro */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .timeline-item-title {
+  color: #e5f0ff; /* Títulos más claros */
+}
+
+.dark-theme .timeline-item-description {
+  color: #c3d1e4; /* Texto claro */
+}
+
+

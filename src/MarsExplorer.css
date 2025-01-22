@@ -1,0 +1,61 @@
+.mars-explorer {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 8px;
+    margin: 5px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .photo-card {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .modal {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .modal button {
+    background-color: #1e2a78;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal button:hover {
+    background-color: #4caf50;
+  }
+  
