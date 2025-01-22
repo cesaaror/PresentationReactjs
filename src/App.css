@@ -760,4 +760,132 @@ button.submit-button:hover {
 }
 
 
+/* Estilos para la sección de aplicaciones */
+.apps-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #f9f9f9, #e9ecef);
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
 
+.apps-section h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.apps-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.app-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.app-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.app-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #0078d4;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.app-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.visit-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #0078d4, #005a9e);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.visit-button:hover {
+  background: linear-gradient(90deg, #005a9e, #003f73);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .apps-section h3 {
+    font-size: 2rem;
+  }
+
+  .apps-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .app-card {
+    border-radius: 8px;
+  }
+
+  .app-content h4 {
+    font-size: 1.25rem;
+  }
+
+  .app-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apps-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .apps-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .visit-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
