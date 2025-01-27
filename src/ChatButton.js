@@ -1,17 +1,14 @@
 import React from 'react';
 import { Button } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
 
 const ChatButton = ({ user }) => {
- 
+  const navigate = useNavigate();
 
-  // Función que se ejecuta al hacer clic en el botón
   const openChatWindow = () => {
     if (user) {
-
-      window.open('/chatWindow', '_blank');
+      navigate('/chatWindow'); // Navega a la sala de chat
     } else {
-      // Si el usuario no está logeado, muestra un mensaje de error o un modal
       alert('Por favor, inicia sesión para acceder al chat.');
     }
   };

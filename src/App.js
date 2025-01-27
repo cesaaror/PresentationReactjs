@@ -36,8 +36,6 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 
 
-
-
 function App() {
   const [selectedTech, setSelectedTech] = useState(null); // Tecnología seleccionada
   const [user, setUser] = useState(null); // Estado del usuario
@@ -265,13 +263,24 @@ connection.connect(error => {
     });
     return () => unsubscribe();
   }, []);
+
+
   useEffect(() => {
     // Escucha cambios en el estado de autenticación
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser); // Guarda el usuario actual en el estado
+      if (currentUser) {
+        console.log("Usuario autenticado:", currentUser);
+        setUser(currentUser); // Guarda el usuario autenticado en el estado
+      } else {
+        console.log("Usuario no autenticado");
+        setUser(null); // Limpia el estado si no hay usuario autenticado
+      }
     });
+  
     return () => unsubscribe(); // Limpia la suscripción al desmontar el componente
   }, []);
+  
+
 
   const handleLogout = async () => {
     try {
@@ -302,8 +311,7 @@ return (
     <div className="widgets-container">
       <WeatherWidget />     
       
-    </div>
-   
+    </div> 
         
    
 

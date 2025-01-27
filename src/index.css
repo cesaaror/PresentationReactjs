@@ -1,13 +1,139 @@
-body {
+/* -------------------------------- */
+/* Reset para evitar inconsistencias entre navegadores */
+/* -------------------------------- */
+
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* -------------------------------- */
+/* Estilos globales para body y tipografía */
+/* -------------------------------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f6f8; /* Fondo base */
+  color: #333; /* Color de texto base */
+  line-height: 1.6;
+}
+
+/* -------------------------------- */
+/* Tipografía para código */
+/* -------------------------------- */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* -------------------------------- */
+/* Estilos básicos para encabezados */
+/* -------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #222; /* Encabezados más oscuros */
+}
+
+/* -------------------------------- */
+/* Estilos globales para enlaces */
+/* -------------------------------- */
+a {
+  text-decoration: none;
+  color: #007bff; /* Azul predeterminado para enlaces */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* -------------------------------- */
+/* Botones básicos */
+/* -------------------------------- */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* -------------------------------- */
+/* Inputs básicos */
+/* -------------------------------- */
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* -------------------------------- */
+/* Listas básicas */
+/* -------------------------------- */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* -------------------------------- */
+/* Scrollbar personalizado */
+/* -------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
+/* -------------------------------- */
+/* Estilos responsivos básicos */
+/* -------------------------------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
 }

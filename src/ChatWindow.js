@@ -1,27 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { db, sendMessage } from "./firebaseService";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import "./ChatWindow.css";
+import './ChatWindow.css';
+
+
 
 const ChatWindow = ({ user }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [loading, setLoading] = useState(true); // Indicador de carga
+  const [error, setError] = useState(null); // Manejador de errores
+  const chatEndRef = useRef(null); // Referencia para hacer scroll automático
 
   useEffect(() => {
-    // Escuchar cambios en la colección 'messages' en tiempo real
+    if (!user) return;
+
+    setLoading(true); // Inicia el estado de carga
+
     const messagesRef = collection(db, "messages");
     const q = query(messagesRef, orderBy("createdAt", "asc"));
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const fetchedMessages = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setMessages(fetchedMessages);
-    });
+    const unsubscribe = onSnapshot(
+      q,
+      (snapshot) => {
+        const fetchedMessages = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setMessages(fetchedMessages);
+        setLoading(false); // Detén la carga cuando se obtienen los mensajes
+        scrollToBottom(); // Desplázate automáticamente al final
+      },
+      (err) => {
+        setError("Error al cargar los mensajes. Inténtalo más tarde.");
+        console.error("Error al obtener mensajes:", err);
+        setLoading(false); // Detén la carga en caso de error
+      }
+    );
 
     return () => unsubscribe();
-  }, []);
+  }, [user]);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -29,7 +47,7 @@ const ChatWindow = ({ user }) => {
     if (!newMessage.trim()) return;
 
     const messageData = {
-      text: newMessage,
+      text: newMessage.trim(),
       userId: user.uid,
       userName: user.displayName || "Usuario Anónimo",
     };
@@ -37,9 +55,16 @@ const ChatWindow = ({ user }) => {
     try {
       await sendMessage(messageData);
       setNewMessage(""); // Limpiar el campo de entrada
-    } catch (error) {
-      console.error("Error al enviar mensaje:", error);
+      scrollToBottom(); // Desplázate automáticamente al final después de enviar
+    } catch (err) {
+      console.error("Error al enviar mensaje:", err);
+      setError("Error al enviar el mensaje. Inténtalo de nuevo.");
     }
+  };
+
+  // Función para desplazar automáticamente al final
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   if (!user) {
@@ -57,28 +82,38 @@ const ChatWindow = ({ user }) => {
         <p>Conectado como: {user.displayName || "Usuario Anónimo"}</p>
       </div>
 
-      <div className="chat-messages">
-        {messages.map((message) => (
-          <div
-            key={message.id}
-            className={`message ${
-              message.userId === user.uid ? "own-message" : "other-message"
-            }`}
-          >
-            <strong>{message.userName}:</strong>
-            <p>{message.text}</p>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <div className="loading">Cargando mensajes...</div>
+      ) : error ? (
+        <div className="error-message">{error}</div>
+      ) : (
+        <div className="chat-messages">
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`message ${
+                message.userId === user.uid ? "own-message" : "other-message"
+              }`}
+            >
+              <strong>{message.userName}:</strong>
+              <p>{message.text}</p>
+            </div>
+          ))}
+          <div ref={chatEndRef} /> {/* Marcador para scroll automático */}
+        </div>
+      )}
 
       <form className="chat-input" onSubmit={handleSendMessage}>
         <input
           type="text"
           placeholder="Escribe tu mensaje..."
+          aria-label="Escribir mensaje"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" aria-label="Enviar mensaje">
+          Enviar
+        </button>
       </form>
     </div>
   );
