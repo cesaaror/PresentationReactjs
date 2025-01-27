@@ -471,3 +471,304 @@ button:disabled {
 }
 
 
+
+
+
+
+/* Apps Section - Tema Oscuro */
+.dark-theme .apps-section {
+  padding: 40px 20px; /* Espaciado general */
+  background-color: #121212; /* Fondo oscuro consistente */
+  color: #e5e5e5; /* Texto claro */
+  text-align: center; /* Centrar el contenido */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+.dark-theme .apps-section h3 {
+  font-size: 2.5rem; /* Título grande */
+  font-weight: 700; /* Negrita */
+  margin-bottom: 30px; /* Espaciado inferior */
+  color: #00aaff; /* Azul brillante para resaltar */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra en el texto */
+}
+
+/* Apps Gallery */
+.dark-theme .apps-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Diseño de columnas flexible */
+  gap: 20px; /* Espaciado entre tarjetas */
+  justify-items: center; /* Centrar las tarjetas */
+  align-items: stretch; /* Asegurar que las tarjetas se extiendan verticalmente */
+}
+
+/* App Card */
+.dark-theme .app-card {
+  background-color: #1f1f1f; /* Fondo más oscuro para las tarjetas */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra */
+  overflow: hidden; /* Evitar que los elementos sobresalgan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  display: flex;
+  flex-direction: column; /* Organizar contenido verticalmente */
+  justify-content: space-between; /* Espaciar contenido superior e inferior */
+}
+
+.dark-theme .app-card:hover {
+  transform: translateY(-5px); /* Efecto flotante */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+}
+
+/* App Image */
+.dark-theme .app-image {
+  width: 100%; /* Imagen ocupa el ancho completo */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Escalar la imagen sin deformarla */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+}
+
+/* App Content */
+.dark-theme .app-content {
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar el contenido */
+}
+
+.dark-theme .app-content h4 {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: 600; /* Seminegrita */
+  color: #00aaff; /* Azul brillante */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.dark-theme .app-content p {
+  font-size: 1rem; /* Tamaño de texto estándar */
+  color: #c3d1e4; /* Texto claro */
+  margin-bottom: 20px; /* Espaciado inferior */
+  line-height: 1.6; /* Mejor legibilidad */
+}
+
+/* Visit Button */
+.dark-theme .visit-button {
+  display: inline-block; /* Botón en línea */
+  background: linear-gradient(90deg, #00aaff, #0088cc); /* Fondo degradado */
+  color: #ffffff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de texto */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  cursor: pointer; /* Cambiar cursor al pasar el ratón */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.dark-theme .visit-button:hover {
+  background: linear-gradient(90deg, #0088cc, #005f8f); /* Fondo degradado al pasar el ratón */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
+}
+
+/* ----------- Estilos Responsivos para Tema Oscuro ----------- */
+
+/* Ajustes para tablets y pantallas medianas (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .dark-theme .apps-section h3 {
+    font-size: 2rem; /* Reducir tamaño del título */
+    margin-bottom: 20px; /* Espaciado inferior reducido */
+  }
+
+  .dark-theme .apps-gallery {
+    gap: 15px; /* Menor espacio entre tarjetas */
+  }
+
+  .dark-theme .app-card {
+    border-radius: 8px; /* Reducir bordes */
+  }
+
+  .dark-theme .app-image {
+    height: 180px; /* Reducir altura de la imagen */
+  }
+
+  .dark-theme .app-content h4 {
+    font-size: 1.3rem; /* Reducir tamaño del título */
+  }
+
+  .dark-theme .app-content p {
+    font-size: 0.9rem; /* Reducir texto */
+  }
+
+  .dark-theme .visit-button {
+    padding: 8px 16px; /* Reducir tamaño del botón */
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajustes para smartphones y pantallas pequeñas (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .dark-theme .apps-section {
+    padding: 20px 10px; /* Espaciado reducido */
+  }
+
+  .dark-theme .apps-section h3 {
+    font-size: 1.8rem; /* Reducir tamaño del título */
+  }
+
+  .dark-theme .apps-gallery {
+    gap: 10px; /* Menor espacio entre tarjetas */
+  }
+
+  .dark-theme .app-image {
+    height: 150px; /* Reducir altura de la imagen */
+  }
+
+  .dark-theme .app-content h4 {
+    font-size: 1.2rem; /* Reducir tamaño del título */
+  }
+
+  .dark-theme .app-content p {
+    font-size: 0.85rem; /* Reducir texto */
+  }
+
+  .dark-theme .visit-button {
+    padding: 6px 12px; /* Tamaño compacto */
+    font-size: 0.85rem; /* Reducir texto del botón */
+  }
+}
+
+
+/* Formulario - Tema Oscuro */
+.dark-theme .contact-form-container {
+  background-color: #1f1f1f; /* Fondo oscuro */
+  color: #e5e5e5; /* Texto claro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 25px; /* Espaciado interno */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+  max-width: 600px; /* Ancho máximo */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  margin: 40px auto; /* Centrado automático */
+  font-family: 'Poppins', sans-serif;
+}
+
+.dark-theme .contact-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem; /* Tamaño del título */
+  color: #00aaff; /* Azul brillante */
+  text-transform: uppercase; /* Mayúsculas */
+}
+
+.dark-theme .contact-form-container .form-group {
+  margin-bottom: 20px; /* Espaciado entre grupos de formularios */
+}
+
+.dark-theme .contact-form-container label {
+  display: block; /* Etiqueta encima del campo */
+  font-weight: 600; /* Negrita */
+  color: #e5e5e5; /* Texto claro */
+  margin-bottom: 5px; /* Espaciado inferior */
+}
+
+.dark-theme .contact-form-container input,
+.dark-theme .contact-form-container textarea {
+  width: 100%; /* Ocupar todo el ancho */
+  padding: 12px; /* Espaciado interno */
+  border: 1px solid #444444; /* Bordes oscuros */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #2b2b2b; /* Fondo oscuro */
+  color: #e5e5e5; /* Texto claro */
+  font-size: 1rem; /* Tamaño de texto */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.dark-theme .contact-form-container input:focus,
+.dark-theme .contact-form-container textarea:focus {
+  border-color: #00aaff; /* Azul brillante al enfocar */
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.5); /* Sombra al enfocar */
+  outline: none; /* Sin contorno adicional */
+}
+
+.dark-theme .contact-form-container textarea {
+  min-height: 150px; /* Altura mínima para el textarea */
+  resize: none; /* Evitar redimensionar el campo */
+}
+
+.dark-theme .contact-form-container button.submit-button {
+  display: inline-block; /* Botón en línea */
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espaciado interno */
+  background-color: #00aaff; /* Azul brillante */
+  color: #ffffff; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 1.1rem; /* Tamaño de texto */
+  font-weight: bold; /* Negrita */
+  cursor: pointer; /* Cursor interactivo */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.dark-theme .contact-form-container button.submit-button:hover {
+  background-color: #0088cc; /* Azul más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+.dark-theme .contact-form-container p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem; /* Tamaño del texto */
+  color: #ff4040; /* Rojo para mensajes de error */
+}
+
+.dark-theme .contact-form-container p.success {
+  color: #4caf50; /* Verde para mensajes de éxito */
+}
+
+/* ----------- Estilos Responsivos para el Formulario ----------- */
+
+/* Ajustes para tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .dark-theme .contact-form-container {
+    padding: 20px; /* Reducir espaciado */
+  }
+
+  .dark-theme .contact-form-container h2 {
+    font-size: 1.8rem; /* Reducir tamaño del título */
+  }
+
+  .dark-theme .contact-form-container input,
+  .dark-theme .contact-form-container textarea {
+    padding: 10px; /* Reducir espaciado interno */
+    font-size: 0.95rem; /* Ajustar tamaño del texto */
+  }
+
+  .dark-theme .contact-form-container button.submit-button {
+    font-size: 1rem; /* Reducir tamaño del texto del botón */
+    padding: 10px; /* Reducir tamaño del botón */
+  }
+}
+
+/* Ajustes para smartphones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .dark-theme .contact-form-container {
+    padding: 15px; /* Reducir aún más el espaciado */
+  }
+
+  .dark-theme .contact-form-container h2 {
+    font-size: 1.5rem; /* Título más pequeño */
+  }
+
+  .dark-theme .contact-form-container input,
+  .dark-theme .contact-form-container textarea {
+    padding: 8px; /* Reducir espaciado interno */
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+
+  .dark-theme .contact-form-container button.submit-button {
+    font-size: 0.9rem; /* Reducir tamaño del texto */
+    padding: 8px; /* Botón más compacto */
+  }
+}

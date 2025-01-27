@@ -1,6 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');/* Estilos generales */
 
 
 body {
@@ -113,11 +112,6 @@ body {
   text-decoration: underline; /* Subrayar al pasar el ratón */
 }
 
-
-
-
-
-
 /*--------------------------------------------------- */
 .intro-section {
   display: flex;
@@ -174,9 +168,6 @@ body {
   transform: scale(1.05);
   transition: all 0.3s;
 }
-
-
-
 
 /*------------------------------------- Sección de estadísticas */
 .stats-section {
@@ -300,11 +291,9 @@ button:disabled {
 .project-gallery {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  
+  gap: 60px; 
 
 }
-
 .project-card {
   background-color: #0a1f44;
   border-radius: 10px;
@@ -343,8 +332,6 @@ button:disabled {
 }
 
 
-
-
 /*------------------------------------- Tegnologias */
 .technology-description {
   background-color: #f0f0f0;
@@ -369,7 +356,6 @@ button:disabled {
 
 
 /*-------------------------------------  */
-
 
 
 .auth-component {
@@ -401,8 +387,6 @@ button:disabled {
 .auth-component button:hover {
   background-color: #0056b3;
 }
-
-
 
 /* -------style witget-----------------------------------------------------------------------  */
 
@@ -525,48 +509,6 @@ button:disabled {
 }
 
 
-
-/* Estilos para dispositivos móviles */
-@media screen and (max-width: 768px) {
-
-  .main-content {
-    padding: 20px 10px;
-  }
-
-  .intro-section,
-  .stat {
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .stats-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .project-gallery {
-    flex-direction: column;
-  }
-  
-
-  .auth-component {
-    width: 100%;
-    padding: 15px;
-    background-color: #1e2a78;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  .auth-component input,
-  .auth-component button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
 /* Modo Fiesta: Fondo animado y texto blanco */
 .party-mode {
   animation: partyBackground 3s infinite; /* Fondo animado */
@@ -622,9 +564,6 @@ button:disabled {
   border-radius: 10px;
 }
 
-
-
-
 /* Estilo para el GIF en modo fiesta */
 .party-gif {
   width: 150px;
@@ -636,9 +575,6 @@ button:disabled {
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 0 15px rgba(255, 20, 147, 0.7); /* Sombra para el GIF */
 }
-
-
-
 
 
 /* Estilo para el formulario de contacto */
@@ -720,172 +656,338 @@ button.submit-button:hover {
   font-size: 1.1em; /* Un tamaño de fuente un poco mayor para destacar el mensaje */
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .contact-form-container {
-    padding: 20px;
-    margin: 20px;
-  }
 
-  .contact-form-container h2 {
-    font-size: 1.8em; /* Ajuste de tamaño en pantallas pequeñas */
-  }
-
-  .form-group {
-    margin-bottom: 20px; /* Menos espacio en pantallas pequeñas */
-  }
-
-  input, textarea {
-    padding: 12px; /* Reducir el padding para pantallas pequeñas */
-    font-size: 14px; /* Ajustar tamaño de fuente */
-  }
-
-  button.submit-button {
-    padding: 12px;
-    font-size: 14px; /* Ajustar tamaño del texto del botón */
-  }
-}
-
-.nav-link {
-  text-decoration: none;
-  font-weight: bold;
-  color: #1976d2;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: #f0f0f0;
-}
-
-
-/* Estilos para la sección de aplicaciones */
+/* Apps Section */
 .apps-section {
-  padding: 3rem 1.5rem;
-  text-align: center;
-  background: linear-gradient(to bottom, #f9f9f9, #e9ecef);
-  margin-top: 2rem;
-  border-top: 1px solid #ccc;
-  box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px; /* Espaciado general */
+  background-color: #0d2755; /* Fondo azul oscuro */
+  color: #ffffff; /* Texto blanco */
+  text-align: center; /* Centrar el contenido */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
 .apps-section h3 {
-  font-size: 2.4rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #333;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 2.5rem; /* Título grande */
+  font-weight: 700; /* Negrita */
+  margin-bottom: 30px; /* Espaciado inferior */
+  color: #ffb703; /* Color dorado */
+  text-transform: uppercase; /* Mayúsculas */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra en el texto */
 }
 
+/* Apps Gallery */
 .apps-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Diseño de columnas flexible */
+  gap: 20px; /* Espaciado entre tarjetas */
+  justify-items: center; /* Centrar las tarjetas */
+  align-items: stretch; /* Asegurar que las tarjetas se extiendan verticalmente */
 }
 
+/* App Card */
 .app-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1e2a78; /* Fondo azul profundo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+  overflow: hidden; /* Evitar que los elementos sobresalgan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: column; /* Organizar contenido verticalmente */
+  justify-content: space-between; /* Espaciar contenido superior e inferior */
 }
 
 .app-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Efecto flotante */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
 }
 
+/* App Image */
 .app-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  width: 100%; /* Imagen ocupa el ancho completo */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Escalar la imagen sin deformarla */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
 }
 
+/* App Content */
 .app-content {
-  padding: 1.5rem;
-  text-align: center;
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar el contenido */
 }
 
 .app-content h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #0078d4;
-  font-weight: 600;
-  text-transform: capitalize;
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: 600; /* Seminegrita */
+  color: #ffb703; /* Color dorado */
+  margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .app-content p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+  font-size: 1rem; /* Tamaño de texto estándar */
+  color: #e0e0e0; /* Texto gris claro */
+  margin-bottom: 20px; /* Espaciado inferior */
+  line-height: 1.6; /* Mejor legibilidad */
 }
 
+/* Visit Button */
 .visit-button {
-  display: inline-block;
-  background: linear-gradient(90deg, #0078d4, #005a9e);
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Botón en línea */
+  background: linear-gradient(90deg, #ffb703, #ff7703); /* Fondo degradado */
+  color: #ffffff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de texto */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  cursor: pointer; /* Cambiar cursor al pasar el ratón */
+  transition: all 0.3s ease-in-out; /* Transición suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 .visit-button:hover {
-  background: linear-gradient(90deg, #005a9e, #003f73);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #ff7703, #d65a03); /* Fondo degradado al pasar el ratón */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
 }
 
-@media (max-width: 768px) {
-  .apps-section h3 {
-    font-size: 2rem;
+/* Estilos responsivos mejorados */
+
+/* Ajustes para tablets y smartphones (pantallas medianas y pequeñas) */
+@media screen and (max-width: 768px) {
+  /* General */
+  body {
+    font-size: 14px; /* Reducir ligeramente el tamaño de fuente */
+    padding: 0 10px; /* Ajustar márgenes laterales */
   }
 
+  .main-content {
+    padding: 15px; /* Espaciado reducido */
+  }
+
+  /* Intro Section */
+  .intro-section {
+    flex-direction: column; /* Cambiar disposición a columna */
+    padding: 15px;
+    text-align: center; /* Centrar texto e imagen */
+  }
+
+  .profile-image {
+    width: 120px; /* Reducir tamaño de la imagen */
+    margin-bottom: 15px; /* Espaciado inferior */
+  }
+
+  .text-content h1 {
+    font-size: 1.5em; /* Reducir el tamaño del título */
+  }
+
+  .text-content p {
+    font-size: 0.9em; /* Ajustar tamaño de la descripción */
+  }
+
+  .btn-contact {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Stats Section */
+  .stats-section {
+    flex-direction: column; /* Mostrar estadísticas en columnas */
+    gap: 15px; /* Espaciado reducido */
+  }
+
+  .stat {
+    width: 100%; /* Ocupar todo el ancho */
+    padding: 15px; /* Reducir padding */
+  }
+
+  /* Galería de proyectos */
+  .project-gallery {
+    gap: 20px; /* Reducir espacio entre tarjetas */
+  }
+
+  .project-card {
+    margin-bottom: 15px; /* Agregar espaciado inferior */
+  }
+
+  /* Apps Section */
+ 
   .apps-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    gap: 20px;
   }
 
   .app-card {
+    padding: 10px;
     border-radius: 8px;
   }
 
-  .app-content h4 {
-    font-size: 1.25rem;
-  }
-
-  .app-content p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .apps-section h3 {
-    font-size: 1.8rem;
-  }
-
-  .apps-gallery {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .app-image {
+    height: 150px; /* Reducir altura de las imágenes */
   }
 
   .visit-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Formularios */
+  .contact-form-container,
+  .auth-component {
+    width: 90%; /* Ocupar todo el ancho */
+    margin: 10px 0; /* Espaciado reducido */
+    padding: 5px;
+  }
+
+  input, textarea {
+    padding: 5px; /* Reducir padding */
+    font-size: 14px; /* Ajustar tamaño de fuente */
+  }
+
+  button.submit-button,
+  .auth-component button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .apps-section h3 {
+    font-size: 2rem; /* Reducir tamaño del título */
+    margin-bottom: 20px; /* Espaciado inferior reducido */
+  }
+
+  .apps-gallery {
+    gap: 15px; /* Menor espacio entre tarjetas */
+  }
+
+  .app-card {
+    border-radius: 8px; /* Reducir bordes */
+  }
+
+  .app-image {
+    height: 180px; /* Reducir altura de la imagen */
+  }
+
+  .app-content h4 {
+    font-size: 1.3rem; /* Reducir tamaño del título */
+  }
+
+  .app-content p {
+    font-size: 0.9rem; /* Reducir texto */
+  }
+
+  .visit-button {
+    padding: 8px 16px; /* Reducir tamaño del botón */
     font-size: 0.9rem;
-    padding: 0.7rem 1.2rem;
+  } 
+
+}
+
+/* Ajustes para smartphones (pantallas pequeñas) */
+@media screen and (max-width: 480px) {
+  /* General */
+  body {
+    font-size: 12px; /* Reducir aún más el tamaño de fuente */
+  }
+
+  .intro-section {
+    padding: 10px;
+  }
+
+  .profile-image {
+    width: 100px; /* Tamaño más pequeño para la imagen */
+  }
+
+  .text-content h1 {
+    font-size: 1.2em; /* Reducir tamaño del título */
+  }
+
+  .text-content p {
+    font-size: 0.8em; /* Ajustar tamaño de fuente */
+  }
+
+  .btn-contact {
+    padding: 6px 12px; /* Reducir padding */
+    font-size: 12px;
+  }
+
+  /* Stats Section */
+  .stats-section {
+    gap: 10px; /* Reducir espacio entre tarjetas */
+  }
+
+  .stat h3 {
+    font-size: 1.2em; /* Reducir tamaño del texto */
+  }
+
+  .stat {
+    padding: 10px; /* Reducir padding */
+  }
+
+  /* Galería de proyectos */
+  .project-gallery {
+    gap: 15px;
+  }
+
+  .project-card {
+    padding: 10px; /* Reducir padding interno */
+  }
+
+  .app-image {
+    height: 120px; /* Reducir altura de imágenes */
+  }
+
+  .visit-button {
+    padding: 8px;
+    font-size: 12px; /* Texto más pequeño en botones */
+  }
+
+  /* Formularios */
+  .contact-form-container,
+  .auth-component {
+    padding: 10px; /* Padding reducido */
+  }
+
+  input, textarea {
+    padding: 8px;
+    font-size: 8px;
+  }
+
+  button.submit-button,
+  .auth-component button {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .apps-section {
+    padding: 20px 10px; /* Espaciado reducido */
+  }
+
+  .apps-section h3 {
+    font-size: 1.8rem; /* Reducir tamaño del título */
+  }
+
+  .apps-gallery {
+    gap: 10px; /* Menor espacio entre tarjetas */
+  }
+
+  .app-image {
+    height: 150px; /* Reducir altura de la imagen */
+  }
+
+  .app-content h4 {
+    font-size: 1.2rem; /* Reducir tamaño del título */
+  }
+
+  .app-content p {
+    font-size: 0.85rem; /* Reducir texto */
+  }
+
+  .visit-button {
+    padding: 6px 12px; /* Tamaño compacto */
+    font-size: 0.85rem; /* Reducir texto del botón */
   }
 }
+
+
+
+

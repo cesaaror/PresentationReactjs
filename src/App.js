@@ -8,16 +8,6 @@ import ContactForm from './ContactForm';
 import AstronomyPicture from './AstronomyPicture';
 import googleChallengeImage from './assets/google-challenge.png';
 import nextJsImage from './assets/nextjs-app.png';
-
-
-
-
-
-
-
-
-
-
 import ChatPage from './ChatPage';
 
 // Importaciones de componentes y recursos
@@ -476,9 +466,6 @@ return (
     </div>
   </div>
 </div>
-
-
-
 </section>
 
 <div className="Start">  
@@ -521,9 +508,6 @@ return (
 );
 
 }
-
-
-
 export default App;
 
 

@@ -1,65 +1,144 @@
+/* Estilo principal para la línea de tiempo */
 .timeline {
-    background-color: #1e2a78; /* Fondo oscuro como en otros componentes */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra similar */
-    max-width: 800px; /* Ancho máximo */
-    margin: 20px auto; /* Centrado automático */
-    color: #c3d1e4; /* Color del texto */
+  background-color: #1e2a78;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 20px auto;
+  color: #c3d1e4;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e5f0ff;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.timeline-content {
+  background-color: #0a1f44;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+}
+
+.timeline-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e5f0ff;
+  margin: 0 0 10px;
+}
+
+.timeline-item-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c3d1e4;
+  margin: 0;
+}
+
+/* ----------- Estilos Responsivos ----------- */
+
+/* Ajustes para tablets y pantallas medianas (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .timeline {
+    padding: 15px; /* Reducir el padding general */
+    max-width: 85%; /* Ajustar el ancho para pantallas medianas */
   }
-  
+
   .timeline-title {
-    font-size: 2rem; /* Tamaño grande para el título */
-    font-weight: 600; /* Fuente seminegrita */
-    text-align: center; /* Centrado del texto */
-    margin-bottom: 20px; /* Espaciado inferior */
-    color: #e5f0ff; /* Color claro */
+    font-size: 1.75rem; /* Reducir el tamaño del título */
+    margin-bottom: 15px; /* Menos espacio debajo del título */
   }
-  
-  .timeline-list {
-    list-style: none; /* Sin puntos de lista */
-    padding: 0; /* Sin relleno */
-    margin: 0; /* Sin márgenes */
-  }
-  
+
   .timeline-item {
-    display: flex; /* Distribución horizontal */
-    align-items: flex-start; /* Alineación superior */
-    margin-bottom: 20px; /* Espaciado entre elementos */
-    border-left: 4px solid #007bff; /* Línea indicadora */
-    padding-left: 15px; /* Separación del contenido */
+    flex-direction: column; /* Cambiar a disposición vertical */
+    border-left: none; /* Quitar la línea vertical */
+    border-top: 4px solid #007bff; /* Línea superior en lugar de lateral */
+    padding-left: 0; /* Quitar padding izquierdo */
+    padding-top: 10px; /* Agregar padding superior */
   }
-  
-  .timeline-item:last-child {
-    margin-bottom: 0; /* Sin margen inferior en el último elemento */
-  }
-  
+
   .timeline-year {
-    font-size: 1.5rem; /* Tamaño mediano */
-    font-weight: bold; /* Negrita */
-    color: #007bff; /* Azul principal */
-    margin-right: 10px; /* Espacio lateral */
+    font-size: 1.2rem; /* Reducir el tamaño del año */
+    margin-bottom: 8px; /* Espaciado inferior */
   }
-  
+
   .timeline-content {
-    background-color: #0a1f44; /* Fondo similar a otros contenedores */
-    padding: 15px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    flex-grow: 1; /* Ocupar espacio restante */
+    padding: 10px; /* Reducir padding interno */
   }
-  
+
   .timeline-item-title {
-    font-size: 1.25rem; /* Tamaño mayor para el título */
-    font-weight: 600; /* Seminegrita */
-    color: #e5f0ff; /* Color claro */
-    margin: 0 0 10px; /* Sin margen superior, margen inferior */
+    font-size: 1.1rem; /* Reducir el tamaño del título */
   }
-  
+
   .timeline-item-description {
-    font-size: 1rem; /* Tamaño normal */
-    line-height: 1.5; /* Altura de línea */
-    color: #c3d1e4; /* Texto claro */
-    margin: 0; /* Sin márgenes */
+    font-size: 0.9rem; /* Ajustar tamaño del texto */
   }
-  
+}
+
+/* Ajustes para smartphones y pantallas pequeñas (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .timeline {
+    padding: 10px; /* Menor padding para pantallas pequeñas */
+    max-width: 100%; /* Usar todo el ancho disponible */
+  }
+
+  .timeline-title {
+    font-size: 1.5rem; /* Reducir tamaño del título */
+  }
+
+  .timeline-item {
+    flex-direction: column; /* Mantener disposición vertical */
+    border-left: none; /* Quitar la línea vertical */
+    border-top: 3px solid #007bff; /* Línea superior más delgada */
+    padding: 8px 0; /* Reducir padding general */
+  }
+
+  .timeline-year {
+    font-size: 1rem; /* Tamaño más pequeño para el año */
+    margin-bottom: 5px;
+  }
+
+  .timeline-content {
+    padding: 8px; /* Reducir padding interno */
+    border-radius: 5px; /* Bordes más pequeños */
+  }
+
+  .timeline-item-title {
+    font-size: 1rem; /* Reducir tamaño del título */
+    margin-bottom: 5px;
+  }
+
+  .timeline-item-description {
+    font-size: 0.85rem; /* Ajustar el texto */
+    line-height: 1.4; /* Altura de línea menor */
+  }
+}
