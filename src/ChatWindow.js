@@ -1,22 +1,33 @@
 import React, { useEffect, useState, useRef } from "react";
-import { db, sendMessage } from "./firebaseService";
+import { db, sendMessage, auth } from "./firebaseService";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 import './ChatWindow.css';
 
-
-
-const ChatWindow = ({ user }) => {
+const ChatWindow = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const [loading, setLoading] = useState(true); // Indicador de carga
-  const [error, setError] = useState(null); // Manejador de errores
-  const chatEndRef = useRef(null); // Referencia para hacer scroll automático
+  const [user, setUser] = useState(null); // Usuario autenticado
+  const [error, setError] = useState(null); // Estado para manejar errores
+  const chatEndRef = useRef(null); // Referencia para scroll automático
 
+  // Verificar el estado del usuario autenticado
   useEffect(() => {
-    if (!user) return;
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        setError(null); // Limpia el error si el usuario está autenticado
+      } else {
+        setUser(null);
+        setError("No has iniciado sesión. Por favor, inicia sesión."); // Establece el error si no hay usuario
+      }
+    });
 
-    setLoading(true); // Inicia el estado de carga
+    return () => unsubscribe();
+  }, []);
 
+  // Suscribirse a los mensajes en Firestore
+  useEffect(() => {
     const messagesRef = collection(db, "messages");
     const q = query(messagesRef, orderBy("createdAt", "asc"));
 
@@ -28,49 +39,60 @@ const ChatWindow = ({ user }) => {
           ...doc.data(),
         }));
         setMessages(fetchedMessages);
-        setLoading(false); // Detén la carga cuando se obtienen los mensajes
-        scrollToBottom(); // Desplázate automáticamente al final
+        setError(null); // Limpia el error si la suscripción es exitosa
+        scrollToBottom();
       },
       (err) => {
-        setError("Error al cargar los mensajes. Inténtalo más tarde.");
         console.error("Error al obtener mensajes:", err);
-        setLoading(false); // Detén la carga en caso de error
+        setError("Error al cargar los mensajes. Inténtalo más tarde.");
       }
     );
 
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
+  // Función para enviar un mensaje
   const handleSendMessage = async (e) => {
     e.preventDefault();
 
-    if (!newMessage.trim()) return;
+    if (!newMessage.trim()) {
+      setError("El mensaje no puede estar vacío.");
+      return;
+    }
+
+    if (!user) {
+      setError("Debes iniciar sesión para enviar mensajes.");
+      return;
+    }
 
     const messageData = {
       text: newMessage.trim(),
       userId: user.uid,
       userName: user.displayName || "Usuario Anónimo",
+      createdAt: new Date(),
     };
 
     try {
       await sendMessage(messageData);
-      setNewMessage(""); // Limpiar el campo de entrada
-      scrollToBottom(); // Desplázate automáticamente al final después de enviar
+      setNewMessage(""); // Limpia el campo de entrada
+      setError(null); // Limpia el error si el envío fue exitoso
+      scrollToBottom();
     } catch (err) {
       console.error("Error al enviar mensaje:", err);
-      setError("Error al enviar el mensaje. Inténtalo de nuevo.");
+      setError("No se pudo enviar el mensaje. Inténtalo de nuevo.");
     }
   };
 
-  // Función para desplazar automáticamente al final
+  // Desplazar automáticamente al final
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Mostrar mensajes condicionalmente si hay un error
   if (!user) {
     return (
       <div className="chat-window">
-        <p>Por favor, inicia sesión para acceder al chat.</p>
+        <p>{error || "Por favor, inicia sesión para acceder al chat."}</p>
       </div>
     );
   }
@@ -82,41 +104,35 @@ const ChatWindow = ({ user }) => {
         <p>Conectado como: {user.displayName || "Usuario Anónimo"}</p>
       </div>
 
-      {loading ? (
-        <div className="loading">Cargando mensajes...</div>
-      ) : error ? (
-        <div className="error-message">{error}</div>
-      ) : (
-        <div className="chat-messages">
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`message ${
-                message.userId === user.uid ? "own-message" : "other-message"
-              }`}
-            >
-              <strong>{message.userName}:</strong>
-              <p>{message.text}</p>
-            </div>
-          ))}
-          <div ref={chatEndRef} /> {/* Marcador para scroll automático */}
-        </div>
-      )}
+      {error && <div className="error-message">{error}</div>}
+
+      <div className="chat-messages">
+        {messages.map((message) => (
+          <div
+            key={message.id}
+            className={`message ${
+              message.userId === user.uid ? "own-message" : "other-message"
+            }`}
+          >
+            <strong>{message.userName}:</strong>
+            <p>{message.text}</p>
+          </div>
+        ))}
+        <div ref={chatEndRef}></div>
+      </div>
 
       <form className="chat-input" onSubmit={handleSendMessage}>
         <input
           type="text"
           placeholder="Escribe tu mensaje..."
-          aria-label="Escribir mensaje"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
         />
-        <button type="submit" aria-label="Enviar mensaje">
-          Enviar
-        </button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );
 };
 
 export default ChatWindow;
+

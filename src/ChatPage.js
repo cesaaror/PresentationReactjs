@@ -1,19 +1,15 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import ChatWindow from "./ChatWindow";
 
 const ChatPage = ({ user }) => {
-  // Permite acceso a la sala de chat, autenticado o no
+  if (!user) {
+    return <Navigate to="/" />;
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <ChatWindow user={user || { displayName: "Invitado", uid: "guest" }} />
-      {/* Si no hay usuario, pasamos un objeto de usuario invitado */}
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <ChatWindow />
     </div>
   );
 };
