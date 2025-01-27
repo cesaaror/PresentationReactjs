@@ -1,15 +1,15 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
-import ChatWindow from "./ChatWindow";
+import React from 'react';
+import ChatWindow from './ChatWindow';
 
 const ChatPage = ({ user }) => {
   if (!user) {
-    return <Navigate to="/" />;
+    return <div>Por favor, inicia sesión para acceder al chat.</div>;
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <ChatWindow />
+    <div>
+      <h1>Sala de Chat</h1>
+      <ChatWindow user={user} />
     </div>
   );
 };

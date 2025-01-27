@@ -7,7 +7,7 @@ const ChatButton = ({ user }) => {
 
   const openChatWindow = () => {
     if (user) {
-      navigate('/chatWindow'); // Navega a la sala de chat
+      navigate('/chatWindow'); // Navegar a la ruta del chat
     } else {
       alert('Por favor, inicia sesión para acceder al chat.');
     }
