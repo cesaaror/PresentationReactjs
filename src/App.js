@@ -8,7 +8,7 @@ import ContactForm from './ContactForm';
 import AstronomyPicture from './AstronomyPicture';
 import googleChallengeImage from './assets/google-challenge.png';
 import nextJsImage from './assets/nextjs-app.png';
-import ChatPage from './ChatPage';
+import ChatPage from "./ChatPage";
 
 // Importaciones de componentes y recursos
 import Nav from './Nav';
@@ -27,7 +27,7 @@ import chat from './assets/chat.webp';
 import { FaJs, FaReact, FaNodeJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 
 // Firebase y otros servicios
-import { getAuth } from 'firebase/auth';
+
 import { fetchComments } from './firebaseService';
 import { auth } from './firebaseService';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
@@ -37,6 +37,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 
 function App() {
+  
   const [selectedTech, setSelectedTech] = useState(null); // Tecnología seleccionada
   const [user, setUser] = useState(null); // Estado del usuario
   const [isAboutPopupOpen, setIsAboutPopupOpen] = useState(false); // Popup "Más sobre mí"
@@ -253,48 +254,41 @@ connection.connect(error => {
   // Cargar comentarios y verificar autenticación al montar el componente
   useEffect(() => {
     const loadComments = async () => {
-      const fetchedComments = await fetchComments();
-      console.log(fetchedComments); // Verifica que se obtengan los comentarios
+      try {
+        const fetchedComments = await fetchComments();
+        console.log("Comentarios cargados:", fetchedComments);
+      } catch (error) {
+        console.error("Error al cargar comentarios:", error);
+      }
     };
-    loadComments();
 
-    const unsubscribe = getAuth().onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
+    loadComments(); // Cargar comentarios al montar el componente
 
-
-  useEffect(() => {
-    // Escucha cambios en el estado de autenticación
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         console.log("Usuario autenticado:", currentUser);
-        setUser(currentUser); // Guarda el usuario autenticado en el estado
+        setUser(currentUser);
       } else {
         console.log("Usuario no autenticado");
-        setUser(null); // Limpia el estado si no hay usuario autenticado
+        setUser(null);
       }
     });
-  
-    return () => unsubscribe(); // Limpia la suscripción al desmontar el componente
-  }, []);
-  
 
+    return () => unsubscribe();
+  }, []);
 
   const handleLogout = async () => {
     try {
       await signOut(auth); // Cierra la sesión del usuario
       setUser(null); // Limpia el estado del usuario
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      console.error("Error al cerrar sesión:", error);
     }
   };
+
   const toggleAboutPopup = () => {
     setIsAboutPopupOpen(!isAboutPopupOpen);
   };
-  
-  
  
 return ( 
   <div className="app-container">
@@ -483,8 +477,6 @@ return (
         
           {/* Componente de asteroides cercanos */}
 
-    
-
      
 
       
@@ -503,9 +495,8 @@ return (
    
     
       <div>
-        <Routes>
-         
-          <Route path="/chatWindow" element={<ChatPage />} />
+      <Routes>
+      <Route path="/chatWindow" element={<ChatPage user={user} />} /> {/* Pasar el usuario */}
         </Routes>
       </div>
     

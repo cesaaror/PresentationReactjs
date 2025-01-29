@@ -1,15 +1,26 @@
-import React from 'react';
-import ChatWindow from './ChatWindow';
+import React from "react";
+import ChatWindow from "./ChatWindow";
 
 const ChatPage = ({ user }) => {
   if (!user) {
-    return <div>Por favor, inicia sesión para acceder al chat.</div>;
+    return (
+      <div>
+        <p>No has iniciado sesión. Por favor, inicia sesión para acceder a la sala de chat.</p>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <h1>Sala de Chat</h1>
-      <ChatWindow user={user} />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+     
+      <ChatWindow user={user}/>
     </div>
   );
 };
