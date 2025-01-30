@@ -9,6 +9,7 @@ import AstronomyPicture from './AstronomyPicture';
 import googleChallengeImage from './assets/google-challenge.png';
 import nextJsImage from './assets/nextjs-app.png';
 import ChatPage from "./ChatPage";
+import PartyModeButton from "./PartyModeButton";
 
 // Importaciones de componentes y recursos
 import Nav from './Nav';
@@ -44,59 +45,7 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false); // Popup de inicio de sesión
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  // Función para manejar la activación y desactivación del "Modo Fiesta"
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'p' && e.ctrlKey) { // Ctrl + P activa el modo Fiesta
-    // Alterna la clase 'party-mode' en el body
-    document.body.classList.toggle('party-mode');
-    
-    // Muestra un mensaje de alerta cuando el modo fiesta se activa
-    if (document.body.classList.contains('party-mode')) {
-      alert('¡Modo Fiesta Activado! 🎉 Presiona Ctrl+ P nuevamente para desactivarlo.');
-    }
-    
-    // Llama a la función para gestionar el GIF y el fondo
-    togglePartyGif();
-    changeBackground();
-  }
-});
-
-// Función para mostrar o quitar el GIF
-function togglePartyGif() {
-  // Verifica si el modo fiesta está activado
-  if (document.body.classList.contains('party-mode')) {
-    // Crear el GIF si no existe
-    let gif = document.querySelector('.party-gif');
-    if (!gif) {
-      gif = document.createElement('img');
-      gif.src = '/tenor.gif';
-      gif.className = 'party-gif';  // Asigna la clase para los estilos
-      gif.style.position = 'fixed';
-      gif.style.bottom = '20px';
-      gif.style.right = '20px';
-      gif.style.zIndex = '1000';
-      gif.style.width = '150px';
-      document.body.appendChild(gif);  // Agregar el GIF al body
-    }
-  } else {
-    // Si el modo fiesta se desactiva, elimina el GIF
-    const gif = document.querySelector('.party-gif');
-    if (gif) gif.remove();
-  }
-}
-
-// Función para cambiar el fondo cuando se activa o desactiva el "Modo Fiesta"
-function changeBackground() {
-  if (document.body.classList.contains('party-mode')) {
-    // Cambiar el fondo y otros estilos del body
-    document.body.style.backgroundColor = '#ff1493';  // Fondo rosa
-    document.body.style.transition = 'background-color 0.5s ease';  // Animación de transición suave
-  } else {
-    // Restaurar el fondo al estado normal
-    document.body.style.backgroundColor = '#1e2a78';  // Fondo oscuro original
-  }
-}
-
+ 
 
 
 
@@ -303,7 +252,8 @@ return (
 
    
     <div className="widgets-container">
-      <WeatherWidget />     
+      <WeatherWidget />  
+       
       
     </div> 
         
@@ -475,9 +425,7 @@ return (
         <h1>Explora el Universo</h1>
         <AstronomyPicture />      
         
-          {/* Componente de asteroides cercanos */}
-
-     
+          {/* Componente de asteroides cercanos */} 
 
       
     
@@ -488,7 +436,10 @@ return (
 
  {/* Componente de formulario de contacto */}
  <section>
+ 
         <ContactForm />
+        <PartyModeButton /> {/* Botón de Modo Fiesta */}
+        
       </section>
       </main>
 

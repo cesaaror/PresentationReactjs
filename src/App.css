@@ -509,73 +509,6 @@ button:disabled {
 }
 
 
-/* Modo Fiesta: Fondo animado y texto blanco */
-.party-mode {
-  animation: partyBackground 3s infinite; /* Fondo animado */
-  color: #fff; /* Texto blanco */
-}
-.party-mode body{
-  animation: partyBackground 3s infinite;
-}
-
-/* Definimos los colores para el fondo animado */
-@keyframes partyBackground {
-  0% { background-color: #ff4d4f; }
-  25% { background-color: #ffbf00; }
-  50% { background-color: #52c41a; }
-  75% { background-color: #1890ff; }
-  100% { background-color: #722ed1; }
-}
-
-/* Animación de "bombeo" para los elementos */
-.party-mode .timeline, 
-.party-mode .auth-container, 
-.party-mode .stats-section, 
-.party-mode .project-gallery {
-  animation: popEffect 1.5s infinite; /* Efecto de escala */
-}
-
-@keyframes popEffect {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-
-.party-mode .timeline-title,
-.party-mode .timeline-item-title {
-  color: #ffffff; /* Blanco brillante para los títulos */
-}
-
-.party-mode .timeline-item {
-  border-left: 4px solid #ff1493; /* Borde rosa brillante */
-}
-
-.party-mode .timeline-content {
-  background-color: #ff4da6; /* Fondo más claro para el contenido */
-}
-
-.party-mode .timeline-item-description {
-  color: #ffe6f1; /* Texto suave para las descripciones */
-}
-
-/* Estilos para otros componentes, como los formularios */
-.party-mode .auth-container {
-  background-color: #ff80c0; /* Fondo rosa pastel */
-  border-radius: 10px;
-}
-
-/* Estilo para el GIF en modo fiesta */
-.party-gif {
-  width: 150px;
-  height: auto;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 0 15px rgba(255, 20, 147, 0.7); /* Sombra para el GIF */
-}
-
 
 /* Estilo para el formulario de contacto */
 .contact-form-container {
@@ -988,6 +921,190 @@ button.submit-button:hover {
   }
 }
 
+/* 🌈 Botón de Activación del Modo Fiesta */
+.party-mode-button {
+  background: linear-gradient(45deg, #ff1493, #ffb703);
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(255, 20, 147, 0.7);
+  animation: pulseGlow 2s infinite;
+}
 
+.party-mode-button:hover {
+  background: linear-gradient(45deg, #ffb703, #ff1493);
+  transform: scale(1.15);
+}
 
+/* ✨ Efecto de pulsación */
+@keyframes pulseGlow {
+  0% { box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.7); }
+  50% { box-shadow: 0px 0px 30px rgba(255, 20, 147, 1); }
+  100% { box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.7); }
+}
 
+/* 🎊 Notificación animada */
+.party-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff1493;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 12px rgba(255, 20, 147, 0.7);
+  z-index: 9999;
+  animation: slideIn 0.5s ease-in-out, shake 1.5s infinite;
+}
+
+/* 🎭 Efecto de entrada */
+@keyframes slideIn {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* 🚀 Efecto de sacudida */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+/* 🔥 Efecto de animación del fondo */
+@keyframes partyBackground {
+  0% { background-color: #ff4d4f; }
+  25% { background-color: #ffbf00; }
+  50% { background-color: #52c41a; }
+  75% { background-color: #1890ff; }
+  100% { background-color: #722ed1; }
+}
+
+/* 🎉 Modo Fiesta: Activación global */
+.party-mode {
+  animation: partyBackground 3s infinite;
+  color: #fff;
+}
+
+/* 🎶 GIF Animado con efecto rebote */
+.party-gif {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  z-index: 1000;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.8);
+  animation: bounce 2s infinite;
+}
+
+/* 🎈 Efecto de rebote */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 🔥 Efecto de parpadeo en los títulos */
+.party-mode h1, 
+.party-mode h2, 
+.party-mode h3 {
+  animation: flicker 2s infinite alternate;
+  color: #fff;
+}
+
+/* ✨ Animación de parpadeo */
+@keyframes flicker {
+  0% { opacity: 1; text-shadow: 0 0 5px #fff, 0 0 10px #ff1493; }
+  100% { opacity: 0.7; text-shadow: 0 0 20px #ffb703, 0 0 30px #ff1493; }
+}
+
+/* 💥 Efecto de "bombeo" en secciones importantes */
+.party-mode .navbar, 
+.party-mode .footer, 
+.party-mode .timeline, 
+.party-mode .auth-container, 
+.party-mode .stats-section, 
+.party-mode .project-gallery, 
+.party-mode .card {
+  animation: popEffect 1.5s infinite alternate;
+}
+
+/* 🚀 Efecto de expansión */
+@keyframes popEffect {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* 🌀 Efecto de desplazamiento de texto */
+.party-mode .description,
+.party-mode .apod-description {
+  animation: scrollText 3s linear infinite;
+}
+
+/* 🏃‍♂️ Animación de texto corriendo */
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* 💎 Estilo de bordes iluminados */
+.party-mode .card, 
+.party-mode .box, 
+.party-mode .modal {
+  border: 3px solid #ffb703;
+  box-shadow: 0px 0px 10px rgba(255, 20, 147, 0.8);
+}
+
+/* 🥳 Botones vibrantes */
+.party-mode button {
+  background: linear-gradient(45deg, #ff1493, #ffb703);
+  color: white;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(255, 20, 147, 0.8);
+  animation: pulseGlow 2s infinite;
+}
+
+.party-mode button:hover {
+  transform: scale(1.1);
+}
+
+/* 💥 Efecto de estallido al hacer clic */
+.party-mode button:active {
+  animation: explode 0.3s ease-in-out;
+}
+
+/* 🌟 Animación de explosión */
+@keyframes explode {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* 🎆 Pie de página con efecto vibrante */
+.party-mode .footer {
+  background: linear-gradient(90deg, #ff1493, #ffb703, #ff1493);
+  box-shadow: 0px 4px 15px rgba(255, 20, 147, 0.8);
+}
+
+/* 🎨 Estilos para los formularios */
+.party-mode .auth-container,
+.party-mode .contact-form-container {
+  background: linear-gradient(135deg, #ff4da6, #ffb703);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(255, 20, 147, 0.8);
+}

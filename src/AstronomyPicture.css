@@ -1,4 +1,5 @@
 /* General Styles for Astronomy Widget */
+/* General Styles for Astronomy Widget */
 .Start {
   background-color: #0d2755;
   color: #ffffff;
@@ -10,10 +11,11 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
+  margin-top: 1em;
 }
 
 .Start h1 {
-  font-size: 2.5rem; /* Ajuste del tamaño para pantallas grandes */
+  font-size: 2.5rem;
   color: #ffb703;
   margin-bottom: 25px;
   text-transform: uppercase;
@@ -21,47 +23,46 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   animation: glow 1.5s ease-in-out infinite alternate;
 }
-  
-  /* Efecto de resplandor en el título */
-  @keyframes glow {
-    0% {
-      text-shadow: 0 0 5px #ffb703, 0 0 10px #ffb703, 0 0 15px #ffb703;
-    }
-    100% {
-      text-shadow: 0 0 10px #ffb703, 0 0 20px #ffb703, 0 0 30px #ffb703;
-    }
+
+/* Efecto de resplandor en el título */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ffb703, 0 0 10px #ffb703, 0 0 15px #ffb703;
   }
+  100% {
+    text-shadow: 0 0 10px #ffb703, 0 0 20px #ffb703, 0 0 30px #ffb703;
+  }
+}
+
 /* Caja principal */
 .nasa-content-box {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 30px; /* Reducido para mejor ajuste */
+  padding: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   margin: 20px auto;
   max-width: 1000px;
   width: 90%;
   transition: transform 0.3s ease-in-out;
 }
-  
+
 /* Botón de acción */
 .nasa-content-box button {
   background-color: #1e2a78;
   color: white;
-  padding: 10px 20px; /* Ajuste para pantallas más pequeñas */
+  padding: 12px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px;
-  font-size: 1rem; /* Reducido para mejorar la compatibilidad */
+  font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nasa-content-box button:hover {
-  background-color: #0056b3; /* Hover mejorado */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
-
-  /* Efecto hover en el botón */
-  
 
 /* Astronomy Widget */
 .astronomy-widget {
@@ -104,7 +105,7 @@
 }
 
 .apod-title {
-  font-size: 1.5em; /* Ajuste para pantallas pequeñas */
+  font-size: 1.5em;
   font-weight: 600;
   margin-bottom: 10px;
   color: #ffb703;
@@ -115,127 +116,147 @@
   color: #ffd700;
 }
 
-  .apod-date, .apod-copyright {
-    font-size: 1em;
-    color: #e0e0e0;
-    margin-bottom: 5px;
-  }
-  
-  .apod-description {
-    font-size: 0.95em; /* Ajuste para pantallas pequeñas */
-    line-height: 1.5;
-    font-style: italic;
-    color: #dcdcdc;
-  }
-  
-  /* ___________________________________ */
+.apod-date, .apod-copyright {
+  font-size: 1em;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
 
-  .astronomy-picture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background-color: #000; /* Fondo negro */
-    padding: 20px;
-    min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .carousel-button2 {
-    background-color: #1e2a78;
-    color: white;
-    border: none;
-    font-size: 1.8em;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .carousel-button2:hover {
-    background-color: #4caf50;
-    transform: scale(1.1); /* Efecto hover */
-  }
-  
-  .image-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  .apod-image {
-    width: 100%;
-    height: auto;
-    max-width: 900px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra suave */
-  }
-  
-  .image-info h3 {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #ffb703; /* Color dorado para el título */
-    margin-top: 20px;
-  }
-  
-  .image-description {
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-    color: #dcdcdc;
-    padding: 15px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 900px; /* Ancho máximo de la caja */
-    font-size: 1.1em;
-    line-height: 1.6;
-    text-align: justify; /* Justificar el texto para que se vea más ordenado */
-  }
-  
-  .image-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .image-actions button {
-    padding: 12px 24px;
-    font-size: 1.1em;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 0 10px;
-  }
-  
-  .image-actions button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive Design */
+.apod-description {
+  font-size: 0.95em;
+  line-height: 1.5;
+  font-style: italic;
+  color: #dcdcdc;
+  text-align: justify;
+}
+
+/* ___________________________________ */
+
+/* Contenedor del carrusel */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-button2 {
+  background-color: #1e2a78;
+  color: white;
+  border: none;
+  font-size: 1.8em;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-button2:hover {
+  background-color: #ffb703;
+  transform: scale(1.1);
+}
+
+/* Contenedor de la imagen */
+.image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Imagen principal */
+.apod-image {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Información de la imagen */
+.image-info h3 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #ffb703;
+  margin-top: 20px;
+}
+
+/* Descripción de la imagen */
+.image-description {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Botones de acción */
+.image-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-actions button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 10px;
+}
+
+/* Botón de descarga */
+.image-actions button:nth-child(1) {
+  background-color: #FFA500;
+}
+
+.image-actions button:nth-child(1):hover {
+  background-color: #E69500;
+}
+
+/* Botón de Facebook */
+.image-actions button:nth-child(2) {
+  background-color: #1877F2;
+}
+
+.image-actions button:nth-child(2):hover {
+  background-color: #1256A1;
+}
+
+/* Botón de WhatsApp */
+.image-actions button:nth-child(3) {
+  background-color: #25D366;
+}
+
+.image-actions button:nth-child(3):hover {
+  background-color: #1EBE5D;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .Start {
     padding: 15px;
   }
 
   .Start h1 {
-    font-size: 2rem; /* Reducido en tablets */
+    font-size: 2rem;
     margin-bottom: 20px;
   }
 
@@ -252,10 +273,6 @@
     font-size: 1.3em;
   }
 
-  .apod-description {
-    font-size: 0.85em;
-  }
-
   .carousel-button2 {
     font-size: 1.5em;
     padding: 8px;
@@ -265,33 +282,131 @@
 /* Ajustes específicos para smartphones */
 @media (max-width: 480px) {
   .Start h1 {
-    font-size: 1.6rem; /* Reducido para smartphones */
-  }
-
-  .nasa-content-box {
-    padding: 10px;
+    font-size: 1.6rem;
   }
 
   .astronomy-widget {
     padding: 10px;
-    max-width: 95%; /* Reducido aún más para pantallas pequeñas */
+    max-width: 95%;
+  }
+}
+
+/* Modo Oscuro para Astronomy Widget */
+.dark-theme .Start {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+.dark-theme .Start h1 {
+  color: #ffb703;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.8);
+}
+
+.dark-theme .nasa-content-box {
+  background-color: rgba(50, 50, 50, 0.8);
+  border: 1px solid #222;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.dark-theme .nasa-content-box button {
+  background-color: #303F9F;
+  color: #e5e5e5;
+}
+
+.dark-theme .nasa-content-box button:hover {
+  background-color: #3949AB;
+}
+
+/* Astronomy Widget */
+.dark-theme .astronomy-widget {
+  background-color: #181818;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .apod-title {
+  color: #ffb703;
+}
+
+.dark-theme .apod-date, 
+.dark-theme .apod-copyright, 
+.dark-theme .apod-description {
+  color: #bbb;
+}
+
+.dark-theme .apod-image {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Carrusel */
+.dark-theme .carousel-button2 {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .carousel-button2:hover {
+  background-color: #ffb703;
+  transform: scale(1.1);
+}
+
+/* Botones de acción */
+.dark-theme .image-actions button {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .image-actions button:nth-child(1) { /* Botón de descarga */
+  background-color: #FFA500;
+}
+
+.dark-theme .image-actions button:nth-child(1):hover {
+  background-color: #E69500;
+}
+
+.dark-theme .image-actions button:nth-child(2) { /* Facebook */
+  background-color: #1877F2;
+}
+
+.dark-theme .image-actions button:nth-child(2):hover {
+  background-color: #1256A1;
+}
+
+.dark-theme .image-actions button:nth-child(3) { /* WhatsApp */
+  background-color: #25D366;
+}
+
+.dark-theme .image-actions button:nth-child(3):hover {
+  background-color: #1EBE5D;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dark-theme .Start {
+    padding: 15px;
   }
 
-  .apod-title {
-    font-size: 1.2em;
+  .dark-theme .Start h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
-  .apod-description {
-    font-size: 0.8em;
+  .dark-theme .nasa-content-box {
+    padding: 20px;
   }
 
-  .carousel-button2 {
-    font-size: 1.2em;
-    padding: 6px;
+  .dark-theme .astronomy-widget {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+/* Ajustes específicos para smartphones */
+@media (max-width: 480px) {
+  .dark-theme .Start h1 {
+    font-size: 1.6rem;
   }
 
-  .image-actions button {
-    font-size: 0.85em;
-    padding: 8px 12px;
+  .dark-theme .astronomy-widget {
+    padding: 10px;
+    max-width: 95%;
   }
 }
