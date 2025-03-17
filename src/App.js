@@ -393,32 +393,47 @@ return (
 <section className="apps-section">
   <h3>Explora mis Aplicaciones</h3>
   <div className="apps-gallery">
-  {/* Aplicación 1 */}
-  <div className="app-card">
-  <img src={googleChallengeImage} alt="Google Challenge" className="app-image" />
-
-    <div className="app-content">
-      <h4>Google Challenge</h4>
-      <p>Una aplicación para retos técnicos utilizando tecnologías modernas.</p>
-      <a href="https://google-challenge-chi.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <button className="visit-button">Visitar Aplicación</button>
-      </a>
+    
+    {/* Aplicación 1 */}
+    <div className="app-card">
+      <img src={googleChallengeImage} alt="Google Challenge" className="app-image" />
+      <div className="app-content">
+        <h4>Google Challenge</h4>
+        <p>Una aplicación para retos técnicos utilizando tecnologías modernas.</p>
+        <a href="https://google-challenge-chi.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <button className="visit-button">Visitar Aplicación</button>
+        </a>
+      </div>
     </div>
-  </div>
 
-  {/* Aplicación 2 */}
-  <div className="app-card">
-  <img src={nextJsImage} alt="Aplicación Next.js" className="app-image" />
-    <div className="app-content">
-      <h4>Aplicación Next.js</h4>
-      <p>Proyecto basado en Next.js con funcionalidades avanzadas.</p>
-      <a href="https://aplicacionnextjscesar.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <button className="visit-button">Visitar Aplicación</button>
-      </a>
+    {/* Aplicación 2 */}
+    <div className="app-card">
+      <img src={nextJsImage} alt="Aplicación Next.js" className="app-image" />
+      <div className="app-content">
+        <h4>Aplicación Next.js</h4>
+        <p>Proyecto basado en Next.js con funcionalidades avanzadas.</p>
+        <a href="https://aplicacionnextjscesar.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <button className="visit-button">Visitar Aplicación</button>
+        </a>
+      </div>
     </div>
+
+    {/* 🚀 Nueva Aplicación: Generador de Horarios */}
+    <div className="app-card">
+    <img src="/images/horariosAppImage.png" alt="Generador de Horarios" className="app-image" />
+
+      <div className="app-content">
+        <h4>Generador de Horarios</h4>
+        <p>Una herramienta para gestionar horarios de empleados de forma eficiente.</p>
+        <a href="https://generador-de-horarios.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <button className="visit-button">Visitar Aplicación</button>
+        </a>
+      </div>
+    </div>
+
   </div>
-</div>
 </section>
+
 
 <div className="Start">  
           
